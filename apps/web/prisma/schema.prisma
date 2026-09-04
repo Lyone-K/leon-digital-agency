@@ -1,0 +1,184 @@
+// Leon Digital Agency — transactional data model
+// Content (services, case studies, team, testimonials, blog) lives in Sanity, not here.
+// This schema owns: client portal, leads, projects, bookings, payments, audits.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- Client Portal ----------
+
+model Client {
+  id            String    @id @default(cuid())
+  clerkUserId   String    @unique // links to Clerk auth identity
+  companyName   String
+  contactName   String
+  email         String    @unique
+  phone         String?
+  country       String    @default("Kenya")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  projects      Project[]
+  bookings      Booking[]
+  payments      Payment[]
+  auditRequests AuditRequest[]
+}
+
+model Project {
+  id             String          @id @default(cuid())
+  client         Client          @relation(fields: [clientId], references: [id])
+  clientId       String
+  name           String
+  slug           String          @unique
+  status         ProjectStatus   @default(DISCOVERY)
+  industry       String?         // e.g. "tourism", "healthcare", "real-estate"
+  budgetEstimate Decimal?        @db.Decimal(12, 2)
+  currency       String          @default("KES")
+  startDate      DateTime?
+  targetLaunch   DateTime?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  milestones     Milestone[]
+  payments       Payment[]
+}
+
+enum ProjectStatus {
+  DISCOVERY
+  ONBOARDING
+  DESIGN
+  DEVELOPMENT
+  REVIEW
+  LAUNCHED
+  MAINTENANCE
+  ON_HOLD
+}
+
+model Milestone {
+  id          String    @id @default(cuid())
+  project     Project   @relation(fields: [projectId], references: [id])
+  projectId   String
+  title       String
+  description String?
+  status      MilestoneStatus @default(PENDING)
+  order       Int
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+enum MilestoneStatus {
+  PENDING
+  IN_PROGRESS
+  BLOCKED
+  DONE
+}
+
+// ---------- Leads / Estimator / Booking / Onboarding ----------
+
+model Lead {
+  id            String      @id @default(cuid())
+  name          String
+  email         String
+  phone         String?
+  companyName   String?
+  industry      String?
+  budgetRangeMin Int?
+  budgetRangeMax Int?
+  projectType   String?     // "new-website" | "redesign" | "ecommerce" | "web-app"
+  featuresWanted Json?      // array of selected features from the estimator
+  source        String      @default("estimator") // estimator | contact-form | audit-tool | booking
+  status        LeadStatus  @default(NEW)
+  notes         String?
+  createdAt     DateTime    @default(now())
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL_SENT
+  WON
+  LOST
+}
+
+model Booking {
+  id           String   @id @default(cuid())
+  client       Client?  @relation(fields: [clientId], references: [id])
+  clientId     String?
+  leadEmail    String
+  leadName     String
+  calComBookingUid String? // reference to Cal.com booking
+  purpose      String   // "discovery-call" | "onboarding" | "review"
+  scheduledAt  DateTime
+  status       BookingStatus @default(SCHEDULED)
+  createdAt    DateTime @default(now())
+}
+
+enum BookingStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+// ---------- Payments (deposits) ----------
+
+model Payment {
+  id            String        @id @default(cuid())
+  client        Client        @relation(fields: [clientId], references: [id])
+  clientId      String
+  project       Project?      @relation(fields: [projectId], references: [id])
+  projectId     String?
+  provider      PaymentProvider
+  providerRef   String?       // Stripe payment_intent id or M-Pesa transaction code
+  amount        Decimal       @db.Decimal(12, 2)
+  currency      String        // "KES" | "USD"
+  status        PaymentStatus @default(PENDING)
+  phoneNumber   String?       // for M-Pesa STK push
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+enum PaymentProvider {
+  STRIPE
+  MPESA
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+// ---------- AI Website Audit Tool ----------
+
+model AuditRequest {
+  id           String      @id @default(cuid())
+  client       Client?     @relation(fields: [clientId], references: [id])
+  clientId     String?
+  targetUrl    String
+  requesterEmail String
+  status       AuditStatus @default(QUEUED)
+  seoScore     Int?
+  performanceScore Int?
+  accessibilityScore Int?
+  summary      String?     @db.Text
+  fullReport   Json?
+  createdAt    DateTime    @default(now())
+  completedAt  DateTime?
+}
+
+enum AuditStatus {
+  QUEUED
+  RUNNING
+  COMPLETE
+  FAILED
+}

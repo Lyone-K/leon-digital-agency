@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "work": "Werk",
+    "services": "Diensten",
+    "industries": "Sectoren",
+    "pricing": "Prijzen",
+    "about": "Over ons",
+    "bookCall": "Gesprek boeken",
+    "startProject": "Start een project"
+  },
+  "hero": {
+    "eyebrow": "Nairobi. Kenia. opgericht in 2024",
+    "headlinePrefix": "CREATIEF",
+    "headlineEmphasis": "door Design",
+    "headlineSuffix": ", ICONISCH van NATURE",
+    "body": "Leon Digital Agency — Wij zetten ideeën om in krachtige digitale ervaringen: websites, webapplicaties en merken die bedrijven in Kenia en Oost-Afrika helpen groeien met vertrouwen.",
+    "ctaEstimate": "Start je project",
+    "ctaWork": "Bekijk ons werk"
+  },
+  "footer": {
+    "tagline": "CREATIEF door Design, ICONISCH van NATURE",
+    "services": "Diensten",
+    "industries": "Sectoren",
+    "company": "Bedrijf",
+    "ourWork": "Ons werk",
+    "about": "Over ons",
+    "auditTool": "Gratis audittool",
+    "bookCall": "Gesprek boeken",
+    "clientPortal": "Klantportaal",
+    "privacy": "Privacybeleid",
+    "contact": "Contact",
+    "rights": "Leon Digital Agency. Nairobi, Kenia.",
+    "blog": "Blog"
+  },
+  "cta": {
+    "heading": "Klaar om te zien hoe je bedrijf ervoor staat?",
+    "button": "Vraag een gratis offerte aan"
+  },
+  "language": {
+    "label": "Taal"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "work": "Lavori",
+    "services": "Servizi",
+    "industries": "Settori",
+    "pricing": "Prezzi",
+    "about": "Chi siamo",
+    "bookCall": "Prenota una chiamata",
+    "startProject": "Inizia un progetto"
+  },
+  "hero": {
+    "eyebrow": "Nairobi. Kenya. fondata nel 2024",
+    "headlinePrefix": "CREATIVA",
+    "headlineEmphasis": "per Design",
+    "headlineSuffix": ", ICONICA per NATURA",
+    "body": "Leon Digital Agency — Trasformiamo le tue idee in potenti esperienze digitali: siti web, applicazioni web e brand progettati per aiutare le aziende in Kenya e nell’Africa orientale a crescere con fiducia.",
+    "ctaEstimate": "Inizia il tuo progetto",
+    "ctaWork": "Scopri i nostri lavori"
+  },
+  "footer": {
+    "tagline": "CREATIVA per Design, ICONICA per NATURA",
+    "services": "Servizi",
+    "industries": "Settori",
+    "company": "Azienda",
+    "ourWork": "I nostri lavori",
+    "about": "Chi siamo",
+    "auditTool": "Strumento di audit gratuito",
+    "bookCall": "Prenota una chiamata",
+    "clientPortal": "Portale clienti",
+    "privacy": "Privacy Policy",
+    "contact": "Contatti",
+    "rights": "Leon Digital Agency. Nairobi, Kenya.",
+    "blog": "Blog"
+  },
+  "cta": {
+    "heading": "Pronto a vedere come sta andando la tua attività?",
+    "button": "Richiedi un preventivo gratuito"
+  },
+  "language": {
+    "label": "Lingua"
+  }
+}

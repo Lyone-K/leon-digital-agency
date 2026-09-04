@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-parchment text-slate font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-gold/30;
+  }
+  :focus-visible {
+    outline: 2px solid #C9A24C;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* The ledger rule — the recurring signature motif: a hairline gold divider
+     used wherever content behaves like an "entry" (stat rows, nav, footer columns) */
+  .ledger-rule {
+    @apply border-t border-gold-hairline;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-eyebrow text-gold;
+  }
+
+  .tabular-figure {
+    @apply font-mono tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

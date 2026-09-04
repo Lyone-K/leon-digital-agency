@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "work": "Projetos",
+    "services": "Serviços",
+    "industries": "Setores",
+    "pricing": "Preços",
+    "about": "Sobre nós",
+    "bookCall": "Marcar uma chamada",
+    "startProject": "Iniciar um projeto"
+  },
+  "hero": {
+    "eyebrow": "Nairobi. Quénia. fundada em 2024",
+    "headlinePrefix": "CRIATIVA",
+    "headlineEmphasis": "pelo Design",
+    "headlineSuffix": ", ICÓNICA por NATUREZA",
+    "body": "Leon Digital Agency — Transformamos ideias em experiências digitais poderosas: websites, aplicações web e marcas criadas para ajudar empresas no Quénia e na África Oriental a crescer com confiança.",
+    "ctaEstimate": "Começar o seu projeto",
+    "ctaWork": "Ver o nosso trabalho"
+  },
+  "footer": {
+    "tagline": "CRIATIVA pelo Design, ICÓNICA por NATUREZA",
+    "services": "Serviços",
+    "industries": "Setores",
+    "company": "Empresa",
+    "ourWork": "Os nossos projetos",
+    "about": "Sobre nós",
+    "auditTool": "Ferramenta de auditoria gratuita",
+    "bookCall": "Marcar uma chamada",
+    "clientPortal": "Portal do cliente",
+    "privacy": "Política de privacidade",
+    "contact": "Contacto",
+    "rights": "Leon Digital Agency. Nairobi, Quénia.",
+    "blog": "Blog"
+  },
+  "cta": {
+    "heading": "Pronto para ver como está o seu negócio?",
+    "button": "Obter um orçamento gratuito"
+  },
+  "language": {
+    "label": "Idioma"
+  }
+}

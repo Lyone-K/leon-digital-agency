@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "work": "Kazi Zetu",
+    "services": "Huduma",
+    "industries": "Sekta",
+    "pricing": "Bei",
+    "about": "Kuhusu Sisi",
+    "bookCall": "Weka Miadi",
+    "startProject": "Anza Mradi"
+  },
+  "hero": {
+    "eyebrow": "Nairobi. Kenya. tangu 2024",
+    "headlinePrefix": "UBUNIFU",
+    "headlineEmphasis": "kwa Design",
+    "headlineSuffix": ", YA KIPEKEE KWA ASILI",
+    "body": "Leon Digital Agency — Tunabadilisha mawazo kuwa uzoefu bora wa kidijitali: tovuti, programu za wavuti, na chapa zinazosaidia biashara nchini Kenya na Afrika Mashariki kukua kwa ujasiri.",
+    "ctaEstimate": "Anza Mradi Wako",
+    "ctaWork": "Tazama Kazi Zetu"
+  },
+  "footer": {
+    "tagline": "UBUNIFU kwa Design, YA KIPEKEE KWA ASILI",
+    "services": "Huduma",
+    "industries": "Sekta",
+    "company": "Kampuni",
+    "ourWork": "Kazi Zetu",
+    "about": "Kuhusu Sisi",
+    "auditTool": "Zana ya Ukaguzi Bila Malipo",
+    "bookCall": "Weka Miadi",
+    "clientPortal": "Portal ya Mteja",
+    "privacy": "Sera ya Faragha",
+    "contact": "Mawasiliano",
+    "rights": "Leon Digital Agency. Nairobi, Kenya.",
+    "blog": "Blogu"
+  },
+  "cta": {
+    "heading": "Uko tayari kuona jinsi biashara yako inavyoendelea?",
+    "button": "Pata bei bila malipo"
+  },
+  "language": {
+    "label": "Lugha"
+  }
+}
